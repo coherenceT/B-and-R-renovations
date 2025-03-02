@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Contact Us - Belief Renovations & Woodwork</title>
+    <link rel="stylesheet" href="Styles/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="images/logo.jpg" alt="Belief Renovations Logo" class="logo">
+            <h1 class="site-title">Belief Renovations and Woodwork</h1>
+        </div>
+        <nav aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Hero Section -->
+        <section 
+            class="contact-hero" 
+            style="
+                background: url('background.png') no-repeat center center/cover; 
+                position: relative; 
+                height: 400px; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                text-align: center; 
+                color: white;
+            "
+        >
+            <div 
+                class="hero-overlay" 
+                style="
+                    position: absolute; 
+                    top: 0; 
+                    left: 0; 
+                    width: 100%; 
+                    height: 100%; 
+                    background: rgba(0, 0, 0, 0.5);
+                "
+            ></div>
+            <div 
+                class="hero-content" 
+                style="position: relative; z-index: 2; max-width: 600px; padding: 20px;"
+            >
+                <h1>Get in Touch</h1>
+                <p>We're here to help you bring your dream home to life. Reach out to us today!</p>
+            </div>
+        </section>
+    </main>
+    
+        <!-- Contact Section -->
+<section class="contact-section">
+    <div class="contact-container">
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required aria-label="Full Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required aria-label="Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Your Phone" required aria-label="Phone Number">
+                </div>
+                <div class="form-group">
+                    <select id="service" required aria-label="Select Service">
+                        <option value="">Select Service</option>
+                        <option value="Painting">Painting</option>
+                        <option value="Woodwork">Woodwork</option>
+                        <option value="Bathroom Renovation">Bathroom Renovation</option>
+                        <option value="Home Redesign">Home Redesign</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+<!-- WhatsApp Quote Button -->
+<button class="whatsapp-button" onclick="sendWhatsAppMessage()" 
+    style="background-color: #25D366; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">
+    Get a Quote on WhatsApp
+</button>
+
+    </div>
+    </div>
+</section>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form from reloading the page
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const service = document.getElementById("service").value;
+        const message = document.getElementById("message").value;
+
+        if (!service) {
+            alert("Please select a service.");
+            return;
+        }
+
+        // Construct email link
+        const mailtoLink = `mailto:believetenten@gmail.com?subject=Service Inquiry: ${service}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0AService: ${service}%0D%0AMessage: ${message}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+    });
+
+    function sendWhatsAppMessage() {
+        // Get form values
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const service = document.getElementById("service").value;
+        const message = document.getElementById("message").value;
+
+        if (!service) {
+            alert("Please select a service.");
+            return;
+        }
+
+        // Construct WhatsApp link
+        const whatsappNumber = "27659221584"; // South African format
+        const whatsappMessage = `Hello, my name is ${name}.%0D%0AI'm interested in ${service}.%0D%0AHere's my message: ${message}%0D%0AYou can contact me at ${phone}.`;
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+        // Open WhatsApp chat
+        window.open(whatsappLink, "_blank");
+    }
+</script>
+
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Serving Nationwide in South Africa</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+27 65 922 1584</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>believetenten@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/people/Believe-Renovation-Woodwork/100069258884797/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/believerenovations/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2>Our Location</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed/v1/place?q=90+College+Road,+Pelham,+Pietermaritzburg&key=AIzaSyATJHWg4P9d9yItlg7op7dzwT82IKOutKA"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    aria-label="Google Map"
+                ></iframe>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Serving Nationwide in South Africa</p>
+                    <p><i class="fas fa-phone"></i> +27 65 922 1584</p>
+                    <p><i class="fas fa-envelope"></i> believetenten@gmail.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://web.facebook.com/people/Believe-Renovation-Woodwork/100069258884797/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/believerenovations/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Newsletter Section -->
+            <div class="footer-section">
+                <h4>Subscribe to Our Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p class="newsletter-text">Get the latest updates and special offers</p>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="copyright">
+            <p>© 2025 Belief Renovations & Woodwork - Transformative Home Solutions</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Floating WhatsApp Button -->
+<a href="https://wa.me/27659221584" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+</a>
+</body>
+</html>
+</body>
+</html>
